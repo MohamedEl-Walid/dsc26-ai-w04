@@ -1,6 +1,6 @@
 # W4 task · Bayyina: find the clause, cite the span
 
-DSC Summer Internship 2026 · AI & Deep Tech track · Week 4 · expected time 3–4 hours
+DSC · AI & Deep Tech track · Week 4 · expected time 3–4 hours
 
 ## Scenario
 
