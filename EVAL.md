@@ -8,9 +8,12 @@ overlaps one of the query's `relevant` ranges in the same document.
 
 | Retriever | recall@3 | queries missed |
 |---|---|---|
-| BM25 only | | |
-| Dense only (HashingEmbedder) | | |
-| Hybrid (RRF) | | |
+| BM25 only | 11/12 (0.917) | q12 |
+| Dense only (HashingEmbedder) | 11/12 (0.917) | q12 |
+| Hybrid (RRF) | 11/12 (0.917) | q12 |
 
-<!-- Two or three sentences: what the misses have in common, and what you would try next
-     (a real embedding model, contextual chunk headers, a re-ranker, different chunk size). -->
+The only miss was q12, whose generic English wording about governing law and a competent court
+matched similar boilerplate in several other contracts; BM25 ranked the relevant agency chunk fourth,
+while the character-ngram dense retriever did not place it in the top five. Hybrid therefore tied the
+single-path recall rather than improving it. I would next try a multilingual semantic embedding model
+and contextual chunk headers containing the contract type, then add a small cross-encoder re-ranker.
